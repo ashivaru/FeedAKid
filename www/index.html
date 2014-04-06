@@ -235,25 +235,26 @@
 			<div class="upage" id="addItem" data-role="page">
 				<div class="upage-outer">
 					<div data-role="header" class="container-group inner-element uib_w_2" data-uib="jquery_mobile/header" data-ver="0">
-						<a href="#mainpage" data-icon="back">Back</a>
+						<a href="#mainpage" data-icon="back" onclick="saveNewItem()">Save</a>
 						<h1>New Reminder</h1>
 						<div class="widget-container wrapping-col single-centered"></div>
 						<div class="widget-container content-area horiz-area wrapping-col left"></div>
 						<div class="widget-container content-area horiz-area wrapping-col right"></div>
+						<a href="#mainpage" >Cancel</a>
 					</div>
 					<div id="addItemsub" class="upage-content ">
 
 						<div class="grid grid-pad urow uib_row_6 row-height-6" data-uib="layout/row" data-ver="0">
 							<div class="col uib_col_10 col-0_12-12" data-uib="layout/col" data-ver="0">
-								<div class="widget-container content-area vertical-col">
+								<div id="reminderInfo" class="widget-container content-area vertical-col">
 
-									<div class="table-thing with-label widget uib_w_17 d-margins" data-uib="jquery_mobile/input" data-ver="0">
+									<div  class="table-thing with-label widget uib_w_17 d-margins" data-uib="jquery_mobile/input" data-ver="0">
 										<label class="narrow-control label-inline" for="alertMessage">Message</label>
-										<input class="wide-control" placeholder="Alert Message" type="text" id="alertMessage">
+										<input id="newReminderMessage" class="wide-control" placeholder="Alert Message" type="text" id="alertMessage">
 									</div>
 									<div class="table-thing with-label widget uib_w_18 d-margins" data-uib="jquery_mobile/input" data-ver="0">
 										<label class="narrow-control label-inline" for="newAlertFrequency">Frequency</label>
-										<input class="wide-control" placeholder="Frequency of alerts" type="number" id="newAlertFrequency">
+										<input id="newReminderFrequency" class="wide-control" placeholder="Frequency of alerts" type="number" id="newAlertFrequency">
 									</div><span class="uib_shim"></span>
 								</div>
 							</div>
@@ -267,17 +268,7 @@
 
 		</div>
 
-		<script type="text/javascript">
-			// Paypal said that the payment was successful.   Send an email to the donor.
-			            // using Sendgrid here
-						function emailMe() {
-						  if($("emailDonationReceipt").val() == "checked"){
-						var jqxhr = $.post( "https://api.sendgrid.com/api/mail.send.json?api_user=battlehacksf&api_key=battlehacksf&to=scott.motte@sendgrid.com&from=webmaster@akshayapatra.org&subject=Thank you!&text=Thankyou.  You just fed, 50 children", function() {
-						alert( "success" );
-						});
-						        }
-						}
-		</script>
+
 
 		<!-- /uwrap -->
 	</body>
