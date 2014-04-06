@@ -127,7 +127,9 @@
 											<figcaption data-position="bottom"></figcaption>
 										</figure>
 									</div>
-		<script src="js/paypal-button.min.js?merchant=ashok.shivarudraiah@gmail.com" data-button="donate" data-name="Feed 15 kids" data-quantity="1" data-amount="15" data-callback="AkshyaPatra.org" data-env="sandbox"></script>
+                                    <input type="checkbox" checked="true">Email me!!</input>
+		                            <script src="js/paypal-button.min.js?merchant=ashok.shivarudraiah@gmail.com" data-button="donate" data-name="Feed 15 kids" data-quantity="1" data-amount="15" data-callback="AkshyaPatra.org" data-env="sandbox"></script>
+
 								</div>
 							</div>
 
@@ -147,6 +149,53 @@
 						<div class="widget-container content-area horiz-area wrapping-col right"></div>
 					</div>
 					<div id="manageItemssub" class="upage-content ">
+
+						<div class="grid grid-pad urow uib_row_4 row-height-4" data-uib="layout/row" data-ver="0">
+							<div class="col uib_col_5 col-0_12-12" data-uib="layout/col" data-ver="0">
+								<div class="widget-container content-area vertical-col">
+
+									<div data-role="collapsible-set" class="no_wrap widget uib_w_13 d-margins" data-uib="jquery_mobile/accordion" data-ver="0" data-collapsed-icon="plus" data-expanded-icon="minus">
+										<div data-role="collapsible" class="no_wrap widget uib_w_14" data-uib="jquery_mobile/collapsible" data-ver="0">
+											<h4>Feed a Kid</h4>
+											<div class="col uib_col_6 single-col" data-uib="layout/col" data-ver="0">
+												<div class="widget-container content-area wrapping-col left">
+                                                    Frequency: 3 days
+													<span class="uib_shim"></span>
+												</div>
+											</div>
+										</div>
+										<div data-role="collapsible" class="no_wrap widget uib_w_15" data-uib="jquery_mobile/collapsible" data-ver="0">
+											<h4>Post lunch walk</h4>
+											<div class="col uib_col_7 single-col" data-uib="layout/col" data-ver="0">
+												<div class="widget-container content-area vertical-col">
+                                                    Frequency: 1 days
+													<span class="uib_shim"></span>
+												</div>
+											</div>
+										</div>
+										<div data-role="collapsible" class="no_wrap widget uib_w_16" data-uib="jquery_mobile/collapsible" data-ver="0">
+											<h4>Post dinner walk</h4>
+											<div class="col uib_col_8 single-col" data-uib="layout/col" data-ver="0">
+												<div class="widget-container content-area vertical-col">
+                                                    Frequency: 1 days                                                    
+													<span class="uib_shim"></span>
+												</div>
+											</div>
+										</div>
+										<div data-role="collapsible" class="no_wrap widget uib_w_16" data-uib="jquery_mobile/collapsible" data-ver="0">
+											<h4>Pay Mortgage</h4>
+											<div class="col uib_col_8 single-col" data-uib="layout/col" data-ver="0">
+												<div class="widget-container content-area vertical-col">
+                                                    Frequency: 30 days                                                    
+													<span class="uib_shim"></span>
+												</div>
+											</div>
+										</div>                                        
+									</div><span class="uib_shim"></span>
+								</div>
+							</div>
+							<span class="uib_shim"></span>
+						</div>
 					</div>
 				</div>
 				<!-- /upage-outer -->
@@ -170,12 +219,13 @@
 		</div>
 
 		<script type="text/javascript">
-			$(document).ready(function() {
-			                            $("#feed15Kids").find("button").text = "Feed 15 Kids ($5)!!";
-			                        });
-            function updateFeedKidsCount(){
-                $("kidCountMessage").text = $("donationAmount").val();
-            }
+function emailMe() {
+  if($("emailDonationReceipt").val() == "checked"){
+var jqxhr = $.post( "https://api.sendgrid.com/api/mail.send.json?api_user=battlehacksf&api_key=battlehacksf&to=scott.motte@sendgrid.com&from=webmaster@akshayapatra.org&subject=Thank you!&text=Thankyou.  You just fed, 50 children", function() {
+alert( "success" );
+});
+        }
+}
 		</script>
 
 		<!-- /uwrap -->
