@@ -1,7 +1,9 @@
 function saveData(){
-    var data;
-    data.message = $('newReminderMessage').val();
-    data.frequency = $('newReminderFrequency').val();
+    var newAlert;
+    newAlert.message = $('newReminderMessage').val();
+    newAlert.frequency = $('newReminderFrequency').val();
+    newAlert.time = $('newAlertTime').val();
+
     // TODO: find out a way to store the data
 }
 

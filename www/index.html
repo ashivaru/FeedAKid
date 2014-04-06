@@ -27,6 +27,8 @@
 		</script>
 		<script type="application/javascript" src="js/jquery.min.js"></script>
 		<script type="application/javascript" src="jqm/jquery.mobile-min.js" data-ver="0"></script>
+		<script type="application/javascript" src="js/feedAKid.js" data-ver="0"></script>
+        
 	</head>
 
 	<body>
@@ -35,9 +37,10 @@
 			<div class="upage" id="mainpage" data-role="page">
 				<div class="upage-outer">
 					<div data-role="header" class="container-group inner-element uib_w_1" data-uib="jquery_mobile/header" data-ver="0">
-						<h1>Feed a Kid</h1>
+						<div class="widget-container content-area horiz-area wrapping-col left"></div>                        
+						<!-- <h1>Feed a Kid</h1> -->
+                        <img src="images/feedAChildHeader.jpg"></img>
 						<div class="widget-container wrapping-col single-centered"></div>
-						<div class="widget-container content-area horiz-area wrapping-col left"></div>
 						<div class="widget-container content-area horiz-area wrapping-col right"></div>
 					</div>
 					<div class="upage-content" id="mainsub">
@@ -46,17 +49,17 @@
 							<div class="col uib_col_1 col-0_12-12" data-uib="layout/col" data-ver="0">
 								<div class="widget-container content-area vertical-col">
 
-									<div class="widget uib_w_3 ui-content no_wrap outset-margin d-margins" data-uib="jquery_mobile/listview" data-ver="0">
+									<div class="widget uib_w_3 ui-content no_wrap outset-margin d-margins main-page-button" data-uib="jquery_mobile/listview" data-ver="0">
 										<ul data-role="listview">
-											<li class="widget uib_w_4 main-button-color" data-uib="jquery_mobile/listitem" data-ver="0"><a href="#addItem"><span>New Reminder</span></a>
+											<li class="widget uib_w_4" data-uib="jquery_mobile/listitem" data-ver="0"><a href="#addItem"><span>New Reminder</span></a>
 											</li>
-											<li class="widget uib_w_5" data-uib="jquery_mobile/listitem" data-ver="0"><a href="#manageItems"><span>Manage Items</span></a>
+											<li class="widget uib_w_5" data-uib="jquery_mobile/listitem" data-ver="0"><a href="#manageItems"><span>Manage Reminders</span></a>
 											</li>
-											<li class="widget uib_w_6" data-uib="jquery_mobile/listitem" data-ver="0"><a href="#annecdotes"><span>Slideshow</span></a>
+											<li class="widget uib_w_6" data-uib="jquery_mobile/listitem" data-ver="0"><a href="#feedAKid"><span>Feed a Kid</span></a>
+											</li>                                            
+											<li class="widget uib_w_6" data-uib="jquery_mobile/listitem" data-ver="0"><a href="#slideshow"><span>Slideshow</span></a>
 											</li>
 											<li class="widget uib_w_6" data-uib="jquery_mobile/listitem" data-ver="0"><a href="#help"><span>Help</span></a>
-											</li>
-											<li class="widget uib_w_6" data-uib="jquery_mobile/listitem" data-ver="0"><a href="#annecdotes"><span>Slideshow</span></a>
 											</li>
 										</ul>
 									</div><span class="uib_shim"></span>
@@ -71,7 +74,7 @@
 				<!-- /upage-outer -->
 
 			</div>
-			<div class="upage" id="annecdotes" data-role="page">
+			<div class="upage" id="slideshow" data-role="page">
 				<div class="upage-outer">
 					<div data-role="header" class="container-group inner-element uib_w_10" data-uib="jquery_mobile/header" data-ver="0">
 						<a href="#mainpage" data-icon="back">Back</a> 
@@ -80,7 +83,7 @@
 						<div class="widget-container content-area horiz-area wrapping-col left"></div>
 						<div class="widget-container content-area horiz-area wrapping-col right"></div>
 					</div>
-					<div id="annecdotessub" class="upage-content ">
+					<div id="slideshowsub" class="upage-content ">
 
 						<div class="grid grid-pad urow uib_row_7 row-height-7" data-uib="layout/row" data-ver="0">
 							<div class="col uib_col_11 col-0_12-12" data-uib="layout/col" data-ver="0">
@@ -123,6 +126,15 @@
 						<div class="widget-container content-area horiz-area wrapping-col right"></div>
 					</div>
 					<div id="helpsub" class="upage-content ">
+                        <div data-role="collapsible">
+   <h3>What organization am I donating to?</h3>
+   <p>The money directly goes to <a href="http://Akshayapatra.org/">Akshaya Patra</a>.  A non profit organization in India.</p>
+                            </div>
+                    <div data-role="collapsible">
+
+   <h3>Are the donations tax deductable?</h3>
+   <p>Yes, Akshya patra is a non profit organization registered in United States as well so under section 501(c) all your contributions are tax deductable.</p>                            
+</div>
 					</div>
 				</div>
 				<!-- /upage-outer -->
@@ -160,7 +172,7 @@
 									<input type="checkbox" checked="true">Email me!!
 									<!-- TODO: Need a way to update data-name, button name and data-amount.   Attempted
                                     using jquery to modify it.  did not work.   Work with paypal and intel on this -->
-
+		<script src="js/paypal-button.min.js?merchant=ashok.shivarudraiah@gmail.com" data-button="donate" data-name="Feed 15 kids" data-quantity="1" data-amount="15" data-callback="AkshyaPatra.org" data-env="sandbox"></script>
 								</div>
 							</div>
 
@@ -248,13 +260,23 @@
 								<div id="reminderInfo" class="widget-container content-area vertical-col">
 
 									<div class="table-thing with-label widget uib_w_17 d-margins" data-uib="jquery_mobile/input" data-ver="0">
-										<label class="narrow-control label-inline" for="alertMessage">Message</label>
+										<label class="narrow-control label-inline" for="alertMessage">Message&nbsp;&nbsp;</label>
 										<input id="newReminderMessage" class="wide-control" placeholder="Alert Message" type="text">
 									</div>
 									<div class="table-thing with-label widget uib_w_18 d-margins" data-uib="jquery_mobile/input" data-ver="0">
 										<label class="narrow-control label-inline" for="newAlertFrequency">Frequency</label>
 										<input id="newReminderFrequency" class="wide-control" placeholder="Frequency of alerts" type="number">
-									</div><span class="uib_shim"></span>
+									</div>
+									<div class="table-thing with-label widget uib_w_18 d-margins" data-uib="jquery_mobile/input" data-ver="0">                                         <label for="mydate">Reminder</label>
+                                        
+										<input name="mydate" id="newAlertTime" type="time" data-role="timebox"
+										   data-options='{"mode": "timebox","overrideTimeFormat": 24}'>
+<!--
+<input name="mydate" id="mydate" type="date" data-role="datebox"
+   data-options='{"mode": "timebox", "overrideTimeFormat": 24}'>
+                                        -->
+                                    </div>
+                                    <span class="uib_shim"></span>
 								</div>
 							</div>
 							<span class="uib_shim"></span>
@@ -266,7 +288,7 @@
 			<!-- /upage -->
 
 		</div>
-		<script src="js/paypal-button.min.js?merchant=ashok.shivarudraiah@gmail.com" data-button="donate" data-name="Feed 15 kids" data-quantity="1" data-amount="15" data-callback="AkshyaPatra.org" data-env="sandbox"></script>
+
 
 		<!-- /uwrap -->
 	</body>
