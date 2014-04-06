@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<!--HTML5 doctype-->
+<html>
+
+	<head>
+		<link rel="stylesheet" type="text/css" href="jqm/jquery.mobile-min.css">
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="css/index_main.less.css" class="main-less">
+		<link rel="stylesheet" type="text/css" href="css/custom.css">
+
+		<title>Your New Application</title>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+		<style type="text/css">
+			/* Prevent copy paste for all elements except text fields */
+			*  { -webkit-user-select:none; -webkit-tap-highlight-color:rgba(255, 255, 255, 0); }
+			input, textarea  { -webkit-user-select:text; }
+		</style>
+		<script src="intelxdk.js"></script>
+		<script type="text/javascript">
+			/* This code is used to run as soon as Intel activates */
+			var onDeviceReady=function(){
+			//hide splash screen
+			intel.xdk.device.hideSplashScreen();
+			};
+			document.addEventListener("intel.xdk.device.ready",onDeviceReady,false);
+		</script>
+		<script type="application/javascript" src="js/jquery.min.js"></script>
+		<script type="application/javascript" src="jqm/jquery.mobile-min.js" data-ver="0"></script>
+	</head>
+
+	<body>
+		<!-- content goes here-->
+		<div class="uwrap">
+			<div class="upage" id="mainpage" data-role="page">
+				<div class="upage-outer">
+					<div data-role="header" class="container-group inner-element uib_w_1" data-uib="jquery_mobile/header" data-ver="0">
+						<h1>Feed a Kid</h1>
+						<div class="widget-container wrapping-col single-centered"></div>
+						<div class="widget-container content-area horiz-area wrapping-col left"></div>
+						<div class="widget-container content-area horiz-area wrapping-col right"></div>
+					</div>
+					<div class="upage-content" id="mainsub">
+
+						<div class="grid grid-pad urow uib_row_1 row-height-1" data-uib="layout/row" data-ver="0">
+							<div class="col uib_col_1 col-0_12-12" data-uib="layout/col" data-ver="0">
+								<div class="widget-container content-area vertical-col">
+
+									<div class="widget uib_w_3 ui-content no_wrap outset-margin d-margins" data-uib="jquery_mobile/listview" data-ver="0">
+										<ul data-role="listview">
+											<li class="widget uib_w_4 main-button-color" data-uib="jquery_mobile/listitem" data-ver="0"><a href="#addItem"><span>New Reminder</span></a>
+											</li>
+											<li class="widget uib_w_5" data-uib="jquery_mobile/listitem" data-ver="0"><a href="#manageItems"><span>Manage Items</span></a>
+											</li>
+											<li class="widget uib_w_6" data-uib="jquery_mobile/listitem" data-ver="0"><a href="#feedAKid"><span>Feed a Kid</span></a>
+											</li>
+											<li class="widget uib_w_6" data-uib="jquery_mobile/listitem" data-ver="0"><a href="#help"><span>Help</span></a>
+											</li>
+											<li class="widget uib_w_6" data-uib="jquery_mobile/listitem" data-ver="0"><a href="#annecdotes"><span>Annecdotes</span></a>
+											</li>
+										</ul>
+									</div><span class="uib_shim"></span>
+								</div>
+							</div>
+							<span class="uib_shim"></span>
+						</div>
+					</div>
+					<!-- /upage-content -->
+
+				</div>
+				<!-- /upage-outer -->
+
+			</div>
+			<div class="upage" id="annecdotes" data-role="page">
+				<div class="upage-outer">
+					<div data-role="header" class="container-group inner-element uib_w_10" data-uib="jquery_mobile/header" data-ver="0">
+						<a href="#mainpage" data-icon="back">Back</a> 
+						<h1>Annecdotes</h1>
+						<div class="widget-container wrapping-col single-centered"></div>
+						<div class="widget-container content-area horiz-area wrapping-col left"></div>
+						<div class="widget-container content-area horiz-area wrapping-col right"></div>
+					</div>
+					<div id="annecdotessub" class="upage-content ">
+					</div>
+				</div>
+				<!-- /upage-outer -->
+			</div>
+			<div class="upage" id="help" data-role="page" addbackbutton="true">
+				<div class="upage-outer">
+					<div data-role="header" class="container-group inner-element uib_w_7" data-uib="jquery_mobile/header" data-ver="0">
+						<a href="#mainpage" data-icon="back">Back</a>
+						<h1>Help</h1>
+						<div class="widget-container wrapping-col single-centered"></div>
+						<div class="widget-container content-area horiz-area wrapping-col left"></div>
+						<div class="widget-container content-area horiz-area wrapping-col right"></div>
+					</div>
+					<div id="helpsub" class="upage-content ">
+					</div>
+				</div>
+				<!-- /upage-outer -->
+			</div>
+			<div class="upage" id="feedAKid" data-role="page">
+				<div class="upage-outer">
+					<div data-role="header" class="container-group inner-element uib_w_8" data-uib="jquery_mobile/header" data-ver="0">
+						<a href="#mainpage" data-icon="back">Back</a>
+						<h1>Donate</h1>
+						<div class="widget-container wrapping-col single-centered"></div>
+						<div class="widget-container content-area horiz-area wrapping-col left"></div>
+						<div class="widget-container content-area horiz-area wrapping-col right"></div>
+					</div>
+					<div id="feedAKidsub" class="upage-content ">
+                        <div id="feed15Kids" >
+		<script src="js/paypal-button.min.js?merchant=ashok.shivarudraiah@gmail.com" data-button="donate" data-name="Feed 15 kids" data-quantity="1" data-amount="15" data-callback="AkshyaPatra.org" data-env="sandbox"></script>
+                            </div>
+                        <div id="feedASchool">
+		<script src="js/paypal-button.min.js?merchant=ashok.shivarudraiah@gmail.com" data-button="donate" data-name="donate for a cause" data-quantity="1" data-amount="15" data-callback="AkshyaPatra.org" data-env="sandbox"></script>
+                            </div>
+                        <script type="text/javascript">
+                        $(document).ready(function() {
+                            $("#feed15Kids").find("button").text = "Feed 15 Kids ($1)!!";
+                            $("#feedASchool").find("button").text = "Feed a school for a year ($500)!!";
+                        });
+                        </script>
+					</div>
+				</div>
+				<!-- /upage-outer -->
+			</div>
+			<div class="upage" id="manageItems" data-role="page">
+				<div class="upage-outer">
+					<div data-role="header" class="container-group inner-element uib_w_9" data-uib="jquery_mobile/header" data-ver="0">
+						<a href="#mainpage" data-icon="back">Back</a>
+						<h1>Manage Reminders</h1>
+						<div class="widget-container wrapping-col single-centered"></div>
+						<div class="widget-container content-area horiz-area wrapping-col left"></div>
+						<div class="widget-container content-area horiz-area wrapping-col right"></div>
+					</div>
+					<div id="manageItemssub" class="upage-content ">
+					</div>
+				</div>
+				<!-- /upage-outer -->
+			</div>
+			<div class="upage" id="addItem" data-role="page">
+				<div class="upage-outer">
+					<div data-role="header" class="container-group inner-element uib_w_2" data-uib="jquery_mobile/header" data-ver="0">
+						<a href="#mainpage" data-icon="back">Back</a>
+						<h1>New Reminder</h1>
+						<div class="widget-container wrapping-col single-centered"></div>
+						<div class="widget-container content-area horiz-area wrapping-col left"></div>
+						<div class="widget-container content-area horiz-area wrapping-col right"></div>
+					</div>
+					<div id="addItemsub" class="upage-content ">
+					</div>
+				</div>
+				<!-- /upage-outer -->
+			</div>
+			<!-- /upage -->
+
+		</div>
+		<!-- /uwrap -->
+	</body>
+
+</html>
