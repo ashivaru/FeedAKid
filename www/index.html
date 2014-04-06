@@ -91,7 +91,7 @@
 
 									<div class="widget uib_w_19 scale-image d-margins" data-uib="media/img" data-ver="0">
 										<figure class="figure-align">
-											<img src="images/slide3.gif">
+											<img id="slideShowImage" src="images/slide3.gif" style="cursor:pointer">
 											<figcaption data-position="bottom"></figcaption>
 										</figure>
 									</div>
@@ -107,6 +107,7 @@
 											<figcaption data-position="bottom"></figcaption>
 										</figure>
 									</div>
+
 									<span class="uib_shim"></span>
 								</div>
 							</div>
@@ -266,16 +267,19 @@
 								<div id="reminderInfo" class="widget-container content-area vertical-col">
 
 									<div class="table-thing with-label widget uib_w_17 d-margins" data-uib="jquery_mobile/input" data-ver="0">
-										<label class="narrow-control label-inline" for="alertMessage">Message&nbsp;&nbsp;</label>
-										<input id="newReminderMessage" class="wide-control" placeholder="Alert Message" type="text">
+										<label class="narrow-control label-inline" for="alertMessage">Message&nbsp;&nbsp;
+<input id="newReminderMessage" class="wide-control" placeholder="Reminder Message" type="text"></label>
 									</div>
 									<div class="table-thing with-label widget uib_w_18 d-margins" data-uib="jquery_mobile/input" data-ver="0">
-										<label class="narrow-control label-inline" for="newAlertFrequency">Frequency</label>
-										<input id="newReminderFrequency" class="wide-control" placeholder="Frequency of alerts" type="number">
+										<label class="narrow-control label-inline" for="newAlertFrequency">Frequency
+<input id="newReminderFrequency" class="wide-control" placeholder="Frequency of alerts" type="number">
+</label>
 									</div>
-									<div class="table-thing with-label widget uib_w_18 d-margins" data-uib="jquery_mobile/input" data-ver="0">                                         <label for="mydate">Reminder</label>                                        
-										<input name="mydate" id="newAlertTime" type="time" data-role="timebox"
-										   data-options='{"mode": "timebox","overrideTimeFormat": 24}'>
+									<div class="table-thing with-label widget uib_w_18 d-margins" data-uib="jquery_mobile/input" data-ver="0">
+<label for="mydate">Reminder
+<input name="mydate" id="newAlertTime" type="time" data-role="timebox"
+data-options='{"mode": "timebox","overrideTimeFormat": 24}'>
+</label>                                        
                                     </div>
                                     <span class="uib_shim"></span>
 								</div>
@@ -297,6 +301,22 @@ $("form.paypal-button").submit(function(event) {
   setTimeout(function() {
     return true;
   }, 2000);
+});
+time = new Date().getTime();
+function doAlert() {
+  if(new Date().getTime() - time >= 60000){
+    alert("Post lunch walk!!!");
+  }
+  else{
+    setTimeout(doAlert, 10000);
+  }
+}
+setTimeout(doAlert, 10000);
+imageIndex = 0;
+imageArray = ["images/slide3.gif", "images/side2.jpg", "images/side1.jpg"];
+$("#slideShowImage").click(function(){
+  $(this).attr("src",
+       imageArray[imageIndex % imageArray.length]);
 });
     </script>
 		<!-- /uwrap -->

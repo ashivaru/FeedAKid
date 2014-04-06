@@ -23,10 +23,11 @@ function saveNewItem(){
 // Paypal said that the payment was successful.   Send an email to the donor.
 // using Sendgrid here
 function emailMe() {
-  if($("#emailDonationReceipt").is(":checked")){
+  //if($("#emailDonationReceipt").is(":checked"))
+  if($("#emailid").val() !== null){
 $.ajax({
 type: "POST",
-url: "https://api.sendgrid.com/api/mail.send.json?api_user=feedakid&api_key=welcome&to=ashok.shivarudraiah@gmail.com&from=webmaster@akshayapatra.org&subject=Thank you!&text=Thankyou.  You just fed, 50 children",
+url: "https://api.sendgrid.com/api/mail.send.json?api_user=feedakid&api_key=welcome&to=" +$("#emailDonationReceipt").val() +"&from=webmaster@akshayapatra.org&subject=Thank you!&text=Thankyou.  You just fed, 50 children",
 dataType: 'jsonp',
 jsonp: false,
 error: function(res) {
