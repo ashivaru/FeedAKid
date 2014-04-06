@@ -52,11 +52,11 @@
 											</li>
 											<li class="widget uib_w_5" data-uib="jquery_mobile/listitem" data-ver="0"><a href="#manageItems"><span>Manage Items</span></a>
 											</li>
-											<li class="widget uib_w_6" data-uib="jquery_mobile/listitem" data-ver="0"><a href="#feedAKid"><span>Feed a Kid</span></a>
+											<li class="widget uib_w_6" data-uib="jquery_mobile/listitem" data-ver="0"><a href="#annecdotes"><span>Slideshow</span></a>
 											</li>
 											<li class="widget uib_w_6" data-uib="jquery_mobile/listitem" data-ver="0"><a href="#help"><span>Help</span></a>
 											</li>
-											<li class="widget uib_w_6" data-uib="jquery_mobile/listitem" data-ver="0"><a href="#annecdotes"><span>Annecdotes</span></a>
+											<li class="widget uib_w_6" data-uib="jquery_mobile/listitem" data-ver="0"><a href="#annecdotes"><span>Slideshow</span></a>
 											</li>
 										</ul>
 									</div><span class="uib_shim"></span>
@@ -75,12 +75,40 @@
 				<div class="upage-outer">
 					<div data-role="header" class="container-group inner-element uib_w_10" data-uib="jquery_mobile/header" data-ver="0">
 						<a href="#mainpage" data-icon="back">Back</a> 
-						<h1>Annecdotes</h1>
+						<h1>Slideshow</h1>
 						<div class="widget-container wrapping-col single-centered"></div>
 						<div class="widget-container content-area horiz-area wrapping-col left"></div>
 						<div class="widget-container content-area horiz-area wrapping-col right"></div>
 					</div>
 					<div id="annecdotessub" class="upage-content ">
+
+						<div class="grid grid-pad urow uib_row_7 row-height-7" data-uib="layout/row" data-ver="0">
+							<div class="col uib_col_11 col-0_12-12" data-uib="layout/col" data-ver="0">
+								<div class="widget-container content-area vertical-col">
+
+									<div class="widget uib_w_19 scale-image d-margins" data-uib="media/img" data-ver="0">
+										<figure class="figure-align">
+											<img src="images/slide3.gif">
+											<figcaption data-position="bottom"></figcaption>
+										</figure>
+									</div>
+									<div class="widget uib_w_20 scale-image d-margins" data-uib="media/img" data-ver="0">
+										<figure class="figure-align">
+											<img src="images/slide2.jpg">
+											<figcaption data-position="bottom"></figcaption>
+										</figure>
+									</div>
+									<div class="widget uib_w_21 scale-image d-margins" data-uib="media/img" data-ver="0">
+										<figure class="figure-align">
+											<img src="images/slide1.jpg">
+											<figcaption data-position="bottom"></figcaption>
+										</figure>
+									</div>
+									<span class="uib_shim"></span>
+								</div>
+							</div>
+							<span class="uib_shim"></span>
+						</div>
 					</div>
 				</div>
 				<!-- /upage-outer -->
@@ -127,8 +155,12 @@
 											<figcaption data-position="bottom"></figcaption>
 										</figure>
 									</div>
-                                    <input type="checkbox" checked="true">Email me!!</input>
-		                            <script src="js/paypal-button.min.js?merchant=ashok.shivarudraiah@gmail.com" data-button="donate" data-name="Feed 15 kids" data-quantity="1" data-amount="15" data-callback="AkshyaPatra.org" data-env="sandbox"></script>
+									<!--TODO: need to send an email & play sound applause after donation is successful.
+                                    Work with paypal to figure this out -->
+									<input type="checkbox" checked="true">Email me!!
+									<!-- TODO: Need a way to update data-name, button name and data-amount.   Attempted
+                                    using jquery to modify it.  did not work.   Work with paypal and intel on this -->
+		<script src="js/paypal-button.min.js?merchant=ashok.shivarudraiah@gmail.com" data-button="donate" data-name="Feed 15 kids" data-quantity="1" data-amount="15" data-callback="AkshyaPatra.org" data-env="sandbox"></script>
 
 								</div>
 							</div>
@@ -159,7 +191,7 @@
 											<h4>Feed a Kid</h4>
 											<div class="col uib_col_6 single-col" data-uib="layout/col" data-ver="0">
 												<div class="widget-container content-area wrapping-col left">
-                                                    Frequency: 3 days
+													Frequency: 3 days
 													<span class="uib_shim"></span>
 												</div>
 											</div>
@@ -168,7 +200,7 @@
 											<h4>Post lunch walk</h4>
 											<div class="col uib_col_7 single-col" data-uib="layout/col" data-ver="0">
 												<div class="widget-container content-area vertical-col">
-                                                    Frequency: 1 days
+													Frequency: 1 days
 													<span class="uib_shim"></span>
 												</div>
 											</div>
@@ -177,7 +209,7 @@
 											<h4>Post dinner walk</h4>
 											<div class="col uib_col_8 single-col" data-uib="layout/col" data-ver="0">
 												<div class="widget-container content-area vertical-col">
-                                                    Frequency: 1 days                                                    
+													Frequency: 1 days
 													<span class="uib_shim"></span>
 												</div>
 											</div>
@@ -186,11 +218,11 @@
 											<h4>Pay Mortgage</h4>
 											<div class="col uib_col_8 single-col" data-uib="layout/col" data-ver="0">
 												<div class="widget-container content-area vertical-col">
-                                                    Frequency: 30 days                                                    
+													Frequency: 30 days
 													<span class="uib_shim"></span>
 												</div>
 											</div>
-										</div>                                        
+										</div>
 									</div><span class="uib_shim"></span>
 								</div>
 							</div>
@@ -210,6 +242,23 @@
 						<div class="widget-container content-area horiz-area wrapping-col right"></div>
 					</div>
 					<div id="addItemsub" class="upage-content ">
+
+						<div class="grid grid-pad urow uib_row_6 row-height-6" data-uib="layout/row" data-ver="0">
+							<div class="col uib_col_10 col-0_12-12" data-uib="layout/col" data-ver="0">
+								<div class="widget-container content-area vertical-col">
+
+									<div class="table-thing with-label widget uib_w_17 d-margins" data-uib="jquery_mobile/input" data-ver="0">
+										<label class="narrow-control label-inline" for="alertMessage">Message</label>
+										<input class="wide-control" placeholder="Alert Message" type="text" id="alertMessage">
+									</div>
+									<div class="table-thing with-label widget uib_w_18 d-margins" data-uib="jquery_mobile/input" data-ver="0">
+										<label class="narrow-control label-inline" for="newAlertFrequency">Frequency</label>
+										<input class="wide-control" placeholder="Frequency of alerts" type="number" id="newAlertFrequency">
+									</div><span class="uib_shim"></span>
+								</div>
+							</div>
+							<span class="uib_shim"></span>
+						</div>
 					</div>
 				</div>
 				<!-- /upage-outer -->
@@ -219,13 +268,15 @@
 		</div>
 
 		<script type="text/javascript">
-function emailMe() {
-  if($("emailDonationReceipt").val() == "checked"){
-var jqxhr = $.post( "https://api.sendgrid.com/api/mail.send.json?api_user=battlehacksf&api_key=battlehacksf&to=scott.motte@sendgrid.com&from=webmaster@akshayapatra.org&subject=Thank you!&text=Thankyou.  You just fed, 50 children", function() {
-alert( "success" );
-});
-        }
-}
+			// Paypal said that the payment was successful.   Send an email to the donor.
+			            // using Sendgrid here
+						function emailMe() {
+						  if($("emailDonationReceipt").val() == "checked"){
+						var jqxhr = $.post( "https://api.sendgrid.com/api/mail.send.json?api_user=battlehacksf&api_key=battlehacksf&to=scott.motte@sendgrid.com&from=webmaster@akshayapatra.org&subject=Thank you!&text=Thankyou.  You just fed, 50 children", function() {
+						alert( "success" );
+						});
+						        }
+						}
 		</script>
 
 		<!-- /uwrap -->
