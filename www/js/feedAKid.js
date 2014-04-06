@@ -1,22 +1,39 @@
-function saveData(){
-    var newAlert;
-    newAlert.message = $('newReminderMessage').val();
-    newAlert.frequency = $('newReminderFrequency').val();
-    newAlert.time = $('newAlertTime').val();
-
-    // TODO: find out a way to store the data
+function saveNewItem(){
+    
+    if($('#item1Header').text() === "--") {
+      $('#item1Header').text($("#newReminderMessage").val());
+      $('#item1Message').text('Frequency:' +$("#newReminderFrequency").val() +" at " +$(newAlertTime).val());
+    }
+    else if($('#item2Header').text() === "--") {
+      $('#item2Header').text($("#newReminderMessage").val());
+      $('#item2Message').text('Frequency:' +$("#newReminderFrequency").val() +" at " +$(newAlertTime).val());
+    }
+    else if($('#item3Header').text() === "--") {
+      $('#item3Header').text($("#newReminderMessage").val());
+      $('#item3Message').text('Frequency:' +$("#newReminderFrequency").val() +" at " +$(newAlertTime).val());
+    }
+    else if($('#item4Header').text() === "--") {
+      $('#item4Header').text($("#newReminderMessage").val());
+      $('#item4Message').text('Frequency:' +$("#newReminderFrequency").val() +" at " +$(newAlertTime).val());
+    }  
+    console.log("No space for new reminders");
 }
 
 
 // Paypal said that the payment was successful.   Send an email to the donor.
 // using Sendgrid here
 function emailMe() {
-  if($("emailDonationReceipt").val() == "checked"){
-    var jqxhr = $.post( "https://api.sendgrid.com/api/mail.send.json?api_user=battlehacksf&api_key=battlehacksf&to=scott.motte@sendgrid.com&from=webmaster@akshayapatra.org&subject=Thank you!&text=Thankyou.  You just fed, 50 children", function(response) {
-   // message successully sent!!!
-   // alert( "success" );
-        console.log('Sending email:' +response);
-   });
+  if($("#emailDonationReceipt").is(":checked")){
+$.ajax({
+type: "POST",
+url: "https://api.sendgrid.com/api/mail.send.json?api_user=feedakid&api_key=welcome&to=ashok.shivarudraiah@gmail.com&from=webmaster@akshayapatra.org&subject=Thank you!&text=Thankyou.  You just fed, 50 children",
+dataType: 'jsonp',
+jsonp: false,
+error: function(res) {
+if (res.status === 200) { console.log('email sent') }
+else { console.log('email fail') }
+}
+});
   }
 }
 var tembooData = {

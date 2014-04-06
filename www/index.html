@@ -169,7 +169,7 @@
 									</div>
 									<!--TODO: need to send an email & play sound applause after donation is successful.
                                     Work with paypal to figure this out -->
-									<input type="checkbox" checked="true">Email me!!
+									<label>Email me:<input id="emailDonationReceipt" type="checkbox" checked="checked"></label>
 									<!-- TODO: Need a way to update data-name, button name and data-amount.   Attempted
                                     using jquery to modify it.  did not work.   Work with paypal and intel on this -->
 		<script src="js/paypal-button.min.js?merchant=ashok.shivarudraiah@gmail.com" data-button="donate" data-name="Feed 15 kids" data-quantity="1" data-amount="15" data-callback="AkshyaPatra.org" data-env="sandbox"></script>
@@ -202,38 +202,44 @@
 											<h4>Feed a Kid</h4>
 											<div class="col uib_col_6 single-col" data-uib="layout/col" data-ver="0">
 												<div class="widget-container content-area wrapping-col left">
-													Frequency: 3 days
+													Frequency: 3 days at 12:00
 													<span class="uib_shim"></span>
 												</div>
 											</div>
 										</div>
-										<div data-role="collapsible" class="no_wrap widget uib_w_15" data-uib="jquery_mobile/collapsible" data-ver="0">
-											<h4>Post lunch walk</h4>
+										<div  data-role="collapsible" class="no_wrap widget uib_w_15" data-uib="jquery_mobile/collapsible" data-ver="0">
+											<h4 id="item1Header">Post lunch walk</h4>
 											<div class="col uib_col_7 single-col" data-uib="layout/col" data-ver="0">
-												<div class="widget-container content-area vertical-col">
-													Frequency: 1 days
+												<div id="item1Message" class="widget-container content-area vertical-col">
+													Frequency: 1 days at 12:00
 													<span class="uib_shim"></span>
 												</div>
 											</div>
 										</div>
 										<div data-role="collapsible" class="no_wrap widget uib_w_16" data-uib="jquery_mobile/collapsible" data-ver="0">
-											<h4>Post dinner walk</h4>
+											<h4 id="item2Header" >--</h4>
 											<div class="col uib_col_8 single-col" data-uib="layout/col" data-ver="0">
-												<div class="widget-container content-area vertical-col">
-													Frequency: 1 days
+												<div id="item2Message" class="widget-container content-area vertical-col">
 													<span class="uib_shim"></span>
 												</div>
 											</div>
 										</div>
-										<div data-role="collapsible" class="no_wrap widget uib_w_16" data-uib="jquery_mobile/collapsible" data-ver="0">
-											<h4>Pay Mortgage</h4>
+										<div  data-role="collapsible" class="no_wrap widget uib_w_16" data-uib="jquery_mobile/collapsible" data-ver="0">
+											<h4 id="item3Header">--</h4>
 											<div class="col uib_col_8 single-col" data-uib="layout/col" data-ver="0">
-												<div class="widget-container content-area vertical-col">
-													Frequency: 30 days
+												<div id="item3Message" class="widget-container content-area vertical-col">
 													<span class="uib_shim"></span>
 												</div>
 											</div>
 										</div>
+										<div  data-role="collapsible" class="no_wrap widget uib_w_16" data-uib="jquery_mobile/collapsible" data-ver="0">
+											<h4 id="item4Header">--</h4>
+											<div class="col uib_col_8 single-col" data-uib="layout/col" data-ver="0">
+												<div id="item4Message" class="widget-container content-area vertical-col">
+													<span class="uib_shim"></span>
+												</div>
+											</div>
+										</div>                                        
 									</div><span class="uib_shim"></span>
 								</div>
 							</div>
@@ -267,14 +273,9 @@
 										<label class="narrow-control label-inline" for="newAlertFrequency">Frequency</label>
 										<input id="newReminderFrequency" class="wide-control" placeholder="Frequency of alerts" type="number">
 									</div>
-									<div class="table-thing with-label widget uib_w_18 d-margins" data-uib="jquery_mobile/input" data-ver="0">                                         <label for="mydate">Reminder</label>
-                                        
+									<div class="table-thing with-label widget uib_w_18 d-margins" data-uib="jquery_mobile/input" data-ver="0">                                         <label for="mydate">Reminder</label>                                        
 										<input name="mydate" id="newAlertTime" type="time" data-role="timebox"
 										   data-options='{"mode": "timebox","overrideTimeFormat": 24}'>
-<!--
-<input name="mydate" id="mydate" type="date" data-role="datebox"
-   data-options='{"mode": "timebox", "overrideTimeFormat": 24}'>
-                                        -->
                                     </div>
                                     <span class="uib_shim"></span>
 								</div>
@@ -289,7 +290,15 @@
 
 		</div>
 
-
+<script>
+// make this global
+$("form.paypal-button").submit(function(event) {
+  emailMe();
+  setTimeout(function() {
+    return true;
+  }, 2000);
+});
+    </script>
 		<!-- /uwrap -->
 	</body>
 
