@@ -95,6 +95,7 @@
 											<figcaption data-position="bottom"></figcaption>
 										</figure>
 									</div>
+<!--
 									<div class="widget uib_w_20 scale-image d-margins" data-uib="media/img" data-ver="0">
 										<figure class="figure-align">
 											<img src="images/slide2.jpg">
@@ -107,6 +108,7 @@
 											<figcaption data-position="bottom"></figcaption>
 										</figure>
 									</div>
+-->
 
 									<span class="uib_shim"></span>
 								</div>
@@ -158,22 +160,22 @@
 									<div class="widget uib_w_11 no_wrap no_swipe-x with-label d-margins" data-uib="jquery_mobile/slider" data-ver="0">
 										<label class="narrow-control label-inline">Feed children</label>
 										<div class="wide-control">
-											<input id="donationAmount" type="range" value="5" min="1" max="100" step="1">
+											<input id="donationAmount" type="range" value="45" min="5" max="100" step="1">
 										</div>
 
 									</div>
 									<div class="widget uib_w_12 scale-image d-margins" data-uib="media/img" data-ver="0">
 										<figure class="figure-align">
-											<img src="images/hungry_child_1.jpeg">
+											<img id="locationShowImage" src="images/hungry_child_1.jpeg">
 											<figcaption data-position="bottom"></figcaption>
 										</figure>
 									</div>
 									<!--TODO: need to send an email & play sound applause after donation is successful.
                                     Work with paypal to figure this out -->
-									<label>Email me:<input id="emailDonationReceipt" type="checkbox" checked="checked"></label>
+									<label>Email me:<input id="emailDonationReceipt" type="email"></label>
 									<!-- TODO: Need a way to update data-name, button name and data-amount.   Attempted
                                     using jquery to modify it.  did not work.   Work with paypal and intel on this -->
-		<script src="js/paypal-button.min.js?merchant=ashok.shivarudraiah@gmail.com" data-button="donate" data-name="Feed 15 kids" data-quantity="1" data-amount="15" data-callback="AkshyaPatra.org" data-env="sandbox"></script>
+		<script src="js/paypal-button.min.js?merchant=ashok.shivarudraiah@gmail.com" data-button="donate" data-name="Feed 45 kids" data-quantity="1" data-amount="9" data-callback="AkshyaPatra.org" data-env="sandbox"></script>
 								</div>
 							</div>
 
@@ -313,11 +315,20 @@ function doAlert() {
 }
 setTimeout(doAlert, 10000);
 imageIndex = 0;
-imageArray = ["images/slide3.gif", "images/side2.jpg", "images/side1.jpg"];
+imageArray = ["images/slide3.gif", "images/slide2.jpg", "images/slide1.jpg"];
 $("#slideShowImage").click(function(){
   $(this).attr("src",
-       imageArray[imageIndex % imageArray.length]);
+       imageArray[++imageIndex % imageArray.length]);
 });
+
+locationIndex = 0;
+locationArray = ["images/hungry_child_1.jpeg", "images/map1.jpg", "images/location1.jpg"];
+$("#locationShowImage").click(function(){
+  $(this).attr("src",
+       locationArray[++locationIndex % locationArray.length]);
+});
+
+
     </script>
 		<!-- /uwrap -->
 	</body>
